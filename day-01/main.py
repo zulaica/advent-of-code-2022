@@ -1,7 +1,10 @@
+from os.path import dirname, join
+
+
 def input():
     elves = [elf := []]
 
-    for line in open("input.txt", "r").readlines():
+    for line in open(join(dirname(__file__), "input.txt"), "r").readlines():
         if line.strip():
             elf.append(int(line))
         else:
@@ -10,7 +13,7 @@ def input():
     return elves
 
 
-def main():
+def get_sorted_calories():
     elves = input()
     calories = []
 
@@ -18,9 +21,14 @@ def main():
         total_calories = sum(elf)
         calories.append(total_calories)
 
-    top_three_elves = sorted(calories, reverse=True)[:3]
+    return sorted(calories, reverse=True)
 
-    print(sum(top_three_elves))
+
+def main():
+    sorted_calories = get_sorted_calories()
+
+    print(f"Total calories carried by the top elf: {sorted_calories[0]}")
+    print(f"Total calories carried by the top three elves: {sum(sorted_calories[:3])}")
 
 
 main()
