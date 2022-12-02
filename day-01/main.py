@@ -18,7 +18,9 @@ def main():
         total_calories = sum(elf)
         calories.append(total_calories)
 
-    print(sorted(calories, reverse=True)[0])
+    top_three_elves = sorted(calories, reverse=True)[:3]
+
+    print(sum(top_three_elves))
 
 
 main()
