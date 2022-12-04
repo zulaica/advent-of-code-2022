@@ -2,4 +2,4 @@
 
 [https://adventofcode.com/2022](https://adventofcode.com/2022)
 
-Solutions written in Python 3.10.7
+Solutions written in Python 3.11.0
