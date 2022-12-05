@@ -47,7 +47,7 @@ def perform_steps(stride):
     return stacks
 
 
-def main():
+if __name__ == '__main__':
     part_1 = perform_steps(-1)
     part_2 = perform_steps(1)
     print(
@@ -58,6 +58,3 @@ def main():
         "The crates at the top of each stack for Part 2 are:",
         f"{''.join([result[-1] for result in part_2])}",
     )
-
-
-main()

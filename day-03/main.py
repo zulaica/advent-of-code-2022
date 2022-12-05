@@ -34,13 +34,10 @@ def get_priority_sum(input):
     return sum([get_item_priority(duplicate) for duplicate in get_duplicates(input)])
 
 
-def main():
+if __name__ == '__main__':
     print(
         f"The sum of the priority of rucksack duplicates is: {get_priority_sum(rucksack_input())}"
     )
     print(
         f"The sum of the priority of group duplicates is: {get_priority_sum(group_input())}"
     )
-
-
-main()

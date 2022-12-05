@@ -62,9 +62,6 @@ def get_all_scores(part_1=True):
     return all_scores
 
 
-def main():
+if __name__ == '__main__':
     print(f"Total score for Part 1: {sum(get_all_scores())}")
     print(f"Total score for Part 2: {sum(get_all_scores(part_1=False))}")
-
-
-main()

@@ -21,11 +21,8 @@ def get_sorted_calories():
     return sorted([sum(elf) for elf in input()], reverse=True)
 
 
-def main():
+if __name__ == '__main__':
     sorted_calories = get_sorted_calories()
 
     print(f"Total calories carried by the top elf: {sorted_calories[0]}")
     print(f"Total calories carried by the top three elves: {sum(sorted_calories[:3])}")
-
-
-main()

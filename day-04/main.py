@@ -27,13 +27,10 @@ def get_assignment_pair_results(fn=all):
     ]
 
 
-def main():
+if __name__ == '__main__':
     print(
         f"Number of assignment pairs where one range is fully contained: {sum(get_assignment_pair_results(all))}"
     )
     print(
         f"Number of assignment pairs with overlapping ranges: {sum( get_assignment_pair_results(any))}"
     )
-
-
-main()
