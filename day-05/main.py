@@ -30,7 +30,7 @@ def generate_stacks(pattern):
     return stacks
 
 
-def perform_steps():
+def perform_steps(stride):
     pattern, procedure = parse_instructions()
     stacks = generate_stacks(pattern)
     steps = map_steps(procedure)
@@ -39,7 +39,8 @@ def perform_steps():
         quantity, origin, destination = step
         origin -= 1
         destination -= 1
-        crates = stacks[origin][-quantity:][::-1]
+
+        crates = stacks[origin][-quantity:][::stride]
         stacks[origin] = stacks[origin][:-quantity]
         stacks[destination].extend(crates)
 
@@ -47,9 +48,15 @@ def perform_steps():
 
 
 def main():
-    results = perform_steps()
+    part_1 = perform_steps(-1)
+    part_2 = perform_steps(1)
     print(
-        f"The crates at the top of each stack are: {''.join([result[-1] for result in results])}"
+        "The crates at the top of each stack for Part 1 are:",
+        f"{''.join([result[-1] for result in part_1])}",
+    )
+    print(
+        "The crates at the top of each stack for Part 2 are:",
+        f"{''.join([result[-1] for result in part_2])}",
     )
 
 
