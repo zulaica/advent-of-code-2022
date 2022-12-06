@@ -9,16 +9,17 @@ def input():
     return parse_input()[0]
 
 
-def get_marker():
-    DELIMITER = 4
+def get_marker(delimiter):
     buffer = input()
     for index in range(len(buffer)):
-        if len(set(buffer[index : index + DELIMITER])) == DELIMITER:
-            return index + DELIMITER
+        position = index + delimiter
+        if len(set(buffer[index:position])) == delimiter:
+            return position
 
 
 def main():
-    print(f"Start-of-packet marker detected at: {get_marker()}")
+    print(f"Start-of-packet marker detected at: {get_marker(4)}")
+    print(f"Start-of-message marker detected at: {get_marker(14)}")
 
 
 main()
