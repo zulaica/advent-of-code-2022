@@ -6,7 +6,7 @@ from utils.input import parse_input
 
 
 def input():
-    return [line.strip().split(",") for line in parse_input()]
+    return [line.split(",") for line in parse_input()]
 
 
 def unpack_section_ranges():

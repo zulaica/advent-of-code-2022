@@ -3,7 +3,8 @@ from os.path import dirname, join
 
 
 def parse_input(filename="input.txt"):
-    return open(join(dirname(sys.argv[0]), filename), "r").readlines()
+    with open(join(dirname(sys.argv[0]), filename), "r") as file:
+        return file.read().splitlines()
 
 
 def parse_instructions(filename="input.txt"):

@@ -22,8 +22,7 @@ def group_input():
 
 def get_duplicates(input):
     return [
-        list(set.intersection(*[set(item.strip()) for item in items]))[0]
-        for items in input
+        list(set.intersection(*[set(item) for item in items]))[0] for items in input
     ]
 
 
