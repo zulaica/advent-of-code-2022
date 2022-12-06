@@ -1,10 +1,14 @@
-from os.path import dirname, join
+import sys
+
+sys.path.append("../")
+
+from utils.input import parse_input
 
 
 def input():
     elves = [elf := []]
 
-    for line in open(join(dirname(__file__), "input.txt"), "r").readlines():
+    for line in parse_input():
         if line.strip():
             elf.append(int(line))
         else:
@@ -14,14 +18,7 @@ def input():
 
 
 def get_sorted_calories():
-    elves = input()
-    calories = []
-
-    for elf in elves:
-        total_calories = sum(elf)
-        calories.append(total_calories)
-
-    return sorted(calories, reverse=True)
+    return sorted([sum(elf) for elf in input()], reverse=True)
 
 
 def main():
