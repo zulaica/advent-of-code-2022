@@ -1,17 +1,15 @@
-from os.path import dirname, join
+import sys
+
+sys.path.append("../")
+
+from utils.input import parse_input
 
 SHAPES = ["rock", "paper", "scissors"]
 OUTCOMES = ["loss", "draw", "win"]
 
 
 def input():
-    rounds = []
-
-    for line in open(join(dirname(__file__), "input.txt"), "r").readlines():
-        round = line.split()
-        rounds.append(round)
-
-    return rounds
+    return [line.split() for line in parse_input()]
 
 
 def get_round_indexes(round):
