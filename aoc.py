@@ -26,7 +26,7 @@ def run_day(day):
 
     if path.exists(file):
         print(f"\nResults for Day {day}:")
-        runpy.run_path(file, run_name='__main__')
+        runpy.run_path(file, run_name="__main__")
     else:
         print(f"{day} is not a valid option")
 
@@ -47,7 +47,7 @@ else:
             else:
                 break
 
-        if prompt in ["C"]:
+        if prompt == "C":
             continue
-        elif prompt in ["Q"]:
+        elif prompt == "Q":
             break

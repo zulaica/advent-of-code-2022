@@ -7,9 +7,6 @@ from utils.input import parse_instructions
 
 
 def map_steps(procedure):
-    """
-    [quantity, origin, destination]
-    """
     return [list(map(int, re.findall("\d+", step))) for step in procedure.splitlines()]
 
 
@@ -47,7 +44,7 @@ def perform_steps(stride):
     return stacks
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(
         "The crates at the top of each stack for Part 1 are:",
         f"{''.join([result[-1] for result in perform_steps(-1)])}",

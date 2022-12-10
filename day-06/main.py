@@ -17,6 +17,6 @@ def get_marker(delimiter):
             return position
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(f"Start-of-packet marker detected at: {get_marker(4)}")
     print(f"Start-of-message marker detected at: {get_marker(14)}")

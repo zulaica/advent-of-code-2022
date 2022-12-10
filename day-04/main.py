@@ -19,10 +19,10 @@ def unpack_section_ranges():
     ]
 
 
-def get_assignment_pair_results(fn=all):
+def get_assignment_pair_results(func):
     return [
-        fn(section in assignment_a for section in assignment_b)
-        or fn(section in assignment_b for section in assignment_a)
+        func(section in assignment_a for section in assignment_b)
+        or func(section in assignment_b for section in assignment_a)
         for assignment_a, assignment_b in unpack_section_ranges()
     ]
 
@@ -34,5 +34,5 @@ if __name__ == "__main__":
     )
     print(
         "Number of assignment pairs with overlapping ranges:",
-        f"{sum( get_assignment_pair_results(any))}",
+        f"{sum(get_assignment_pair_results(any))}",
     )

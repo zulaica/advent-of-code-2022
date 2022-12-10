@@ -42,9 +42,9 @@ def get_outcome_value_from_shape(round_indexes):
     return outcome_index * 3
 
 
-def get_all_scores(part_1=True):
+def get_scores(part_1=True):
     rounds = input()
-    all_scores = []
+    scores = []
 
     for round in rounds:
         round_indexes = get_round_indexes(round)
@@ -56,12 +56,11 @@ def get_all_scores(part_1=True):
             shape_value = get_shape_value_from_outcome(round_indexes)
             outcome_value = round_indexes[1] * 3
 
-        round_score = shape_value + outcome_value
-        all_scores.append(round_score)
+        scores.append(shape_value + outcome_value)
 
-    return all_scores
+    return scores
 
 
-if __name__ == '__main__':
-    print(f"Total score for Part 1: {sum(get_all_scores())}")
-    print(f"Total score for Part 2: {sum(get_all_scores(part_1=False))}")
+if __name__ == "__main__":
+    print(f"Total score for Part 1: {sum(get_scores())}")
+    print(f"Total score for Part 2: {sum(get_scores(part_1=False))}")
