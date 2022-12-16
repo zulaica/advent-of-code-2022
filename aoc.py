@@ -42,7 +42,7 @@ else:
 
         while True:
             prompt = input("\n(C)ontinue, (Q)uit: ").upper()
-            if prompt not in ["C", "Q"]:
+            if prompt not in ("C", "Q"):
                 continue
             else:
                 break

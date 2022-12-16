@@ -25,7 +25,7 @@ def get_directory_sizes():
     path = ROOT
 
     for line in parse_input():
-        if line in ["$ ls", "$ cd /"] or line.startswith("dir "):
+        if line in ("$ ls", "$ cd /") or line.startswith("dir "):
             continue
 
         if line.endswith(".."):
